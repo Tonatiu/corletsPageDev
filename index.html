@@ -4,10 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="./engine/src/css/home_style.css">
+		<script src="./engine/src/js/efects_controller.js"></script>
 	</head>
 	<body>
 		<header>
@@ -22,19 +23,21 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link spy" href="#home">Inicio</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Link</a>
+							<a class="nav-link spy" href="#Nosotros">Nosotros</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link disabled" href="#">Disabled</a>
+							<a class="nav-link spy" href="#">Servicios</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link spy" href="#">Contacto</a>
 						</li>
 					</ul>
 				</div>
 			</nav>
 		</header>
-
 		<main>
 			<div id="home">
 				<div id="carrousel" class="carousel slide" data-ride="carousel">
@@ -50,7 +53,7 @@
 							<div class="carousel-caption d-none d-md-block">
 								<h1 class="bold-tittle">Respeto por los individuos</h1>
 								<div class="redirect-container">
-									<button type="button" class="btn btn-success btn-more">Conócenos</button>
+									<a class="spy" href="#Nosotros"><button type="button" class="btn btn-success btn-more">Conócenos</button></a>
 									<button type="button" class="btn btn-success btn-register">Contáctanos</button>
 								</div>
 							</div>
@@ -61,7 +64,7 @@
 							<div class="carousel-caption d-none d-md-block">
 								<h1 class="bold-tittle">Comunicación abierta y honesta</h1>
 								<div class="redirect-container">
-									<button type="button" class="btn btn-success btn-more">Conócenos</button>
+									<a class="spy" href="#Nosotros"><button type="button" class="btn btn-success btn-more">Conócenos</button></a>
 									<button type="button" class="btn btn-success btn-register">Contáctanos</button>
 								</div>
 							</div>
@@ -72,7 +75,7 @@
 							<div class="carousel-caption d-none d-md-block">
 								<h1 class="bold-tittle">Compromiso por la sociedad</h1>
 								<div class="redirect-container">
-									<button type="button" class="btn btn-success btn-more">Conócenos</button>
+									<a class="spy" href="#Nosotros"><button type="button" class="btn btn-success btn-more">Conócenos</button></a>
 									<button type="button" class="btn btn-success btn-register">Contáctanos</button>
 								</div>
 							</div>
@@ -80,8 +83,32 @@
 					</div>
 				</div>
 			</div>
-			<div id="" class="container">
-
+			<div id="Nosotros" class="container">
+				<h1>Nosotros</h1>
+				<div class="media">
+					<img class="align-self-start mr-3" src="./engine/img/nosotros.jpg">
+					<div class="media-body">
+						<!--<h5 class="mt-0">Top-aligned media</h5>-->
+						<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+						<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					</div>
+				</div>
+				<div class="media" id="Mision">
+					<img class="align-self-start mr-3" src="./engine/img/nosotros.jpg">
+					<div class="media-body">
+						<h5 class="mt-0">Misión</h5>
+						<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+						<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					</div>
+				</div>
+				<div class="media" id="Vision">
+					<img class="align-self-start mr-3" src="./engine/img/nosotros.jpg">
+					<div class="media-body">
+						<h5 class="mt-0">Visión</h5>
+						<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+						<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					</div>
+				</div>
 			</div>
 			<div id="home" class="container">
 
