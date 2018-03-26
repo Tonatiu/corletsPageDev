@@ -4,7 +4,30 @@
 	width: 100%;
 	height: 100%;
 	top: 0%;
-	color: white;
 	opacity: 0.3;
 	text-align: center;
+}
+
+.c-img{
+	width: 100%;
+	height: 100%;
+}
+
+.bold-tittle{
+	color: white;
+}
+
+.btn-more{
+	background-color: #12B846;
+	border-color: #12B846;
+}
+
+.btn-register{
+	background-color: #E08F16;
+	border-color: #E08F16;
+}
+
+.btn-register:hover{
+	background-color: #C47D14;
+	border-color: #C47D14;
 }
