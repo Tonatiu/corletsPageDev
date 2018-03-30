@@ -31,3 +31,23 @@
 	background-color: #C47D14;
 	border-color: #C47D14;
 }
+
+.strip-row-g{
+	background-color: #ededed;
+	/*width: 100vw;*/
+}
+
+.tittle-separator{
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+.separator{
+	border-color: #12B846;
+	border-style: solid;
+	border-width: 0px 0px 2px 0px;
+}
+
+.fade-box{
+	display: none;
+}
