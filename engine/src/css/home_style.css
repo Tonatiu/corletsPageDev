@@ -48,12 +48,11 @@
 }
 .fade-box{
 	opacity: 0;
-	/*height: 50%;*/
 }
 .frame{
-	/*height: 60%;*/
 	margin: 0 auto;
-	padding-top: 3%;
+	padding-top: 2%;
+	padding-bottom: 2%;
 }
 .gray-image{
 	background-color: #ededed;

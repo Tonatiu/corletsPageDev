@@ -30,7 +30,7 @@ $(document).ready(function(){
 		}
 
 		$(".fade-box").each(function(i){
-			fade_top = $(this).offset().top + $(this).outerHeight() / 2;
+			fade_top = $(this).offset().top;
 			fade_bottom = $(this).offset().top + $(this).outerHeight();
 			if(!fadeBoxTransform[i] && bottomWindow >= fade_top && bottomWindow <= fade_bottom){
 				$(this).animate({'opacity':'1'},1000);
@@ -38,7 +38,7 @@ $(document).ready(function(){
 			}
 		});
 
-		fade_top = $("#fade-line").offset().top + $("#fade-line").outerHeight() / 2;
+		fade_top = $("#fade-line").offset().top;
 		fade_bottom = $("#fade-line").offset().top + $("#fade-line").outerHeight();
 		if(bottomWindow >= fade_top && bottomWindow <= fade_bottom){
 			var targets = $("#fade-line").children(".row").children(".col-sm");
