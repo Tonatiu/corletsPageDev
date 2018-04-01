@@ -64,3 +64,12 @@
 #fade-line > .row > .col-sm{
 	opacity: .0;	
 }
+.foot-content{
+	text-align: center;
+	align-items: center;
+	color: white;
+}
+footer{
+	height: 5%;
+	background-color: #343a40;
+}
