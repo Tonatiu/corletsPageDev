@@ -2,7 +2,7 @@ var navTransfor = false;
 var fadeBoxTransform = [false, false, false];
 function scrollAnimation(objeto, tiempo){
 	$('html, body').animate({
-	    scrollTop: objeto.offset().top
+	    scrollTop: objeto.offset().top - $("#top-bar").height()
 	}, tiempo);
 }
 
