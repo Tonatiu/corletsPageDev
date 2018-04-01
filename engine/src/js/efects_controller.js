@@ -20,12 +20,12 @@ $(document).ready(function(){
 
 		if($(window).scrollTop() == 0 && navTransfor){
 			$("#top-bar").animate({"opacity":".3"}, 500);
-			$("#top-bar").animate({"height" : "10%"}, 500);
+			//$("#top-bar").animate({"height" : "10%"}, 500);
 			navTransfor = false;
 		}
 		else if($(window).scrollTop() > 0 && !navTransfor){
 			$("#top-bar").animate({"opacity":"1"}, 500);
-			$("#top-bar").animate({"height" : "13%"}, 500);
+			//$("#top-bar").animate({"height" : "13%"}, 500);
 			navTransfor = true;
 		}
 
