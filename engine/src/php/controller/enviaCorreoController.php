@@ -18,7 +18,9 @@
     //Componemos cuerpo correo.
     $msjCorreo = "Nombre: " . $name;
     $msjCorreo .= "\r\n";
-    $msjCorreo .= "Teléfono Fijo: " . $phone " , Teléfono Celular: " . $phone2;
+    $msjCorreo .= "Teléfono Fijo: " . $phone;
+    $msjCorreo .= "\r\n";
+    $msjCorreo .= "Teléfono Celular: " . $phone2;
     $msjCorreo .= "\r\n";
     $msjCorreo .= "Mensaje: " . $comment;
     $msjCorreo .= "\r\n";
