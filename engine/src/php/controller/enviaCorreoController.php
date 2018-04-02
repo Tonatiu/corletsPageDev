@@ -1,20 +1,32 @@
 <?php
   //Reseteamos variables a 0.
-  $nombre = $apell = $email = $email2 = $telFijo = $movil = $subject = $mensaje = $para = $headers = $msjCorreo = NULL;
+  $name  = $mail = $phone = $phone2 = $comment = $para = $headers = $msjCorreo = NULL;
 
   if (isset($_POST['submit'])) {
     //Obtenemos valores input formulario
-    $nombre = $_GET['nombre'];
-    $apell = $_GET['apell'];
-    $email = $_GET['email1'];
-    $telFijo = $_GET['email'];
-    $movil = $_GET['email'];
-    $subject = $_GET['subject'];   
-    $mensaje = $_GET['mensaje'];
-    $para = 'matrescom@hotmail.com';
+    $name = $_GET['name'];
+    $mail = $_GET['mail'];
+    $phone = $_GET['phone'];
+    $phone2 = $_GET['phone2'];
+    $comment = $_GET['comment'];
+    $para = 'pedro.lopez.darknes@gmail.com';
+  
+    //Creamos cabecera.
+    $headers = 'From' . " " . $mail . "\r\n";
+    $headers .= "Content-type: text/html; charset=utf-8";
 
-    if ($email != $email2) {
-     echo "El correo no coincide";
+    //Componemos cuerpo correo.
+    $msjCorreo = "Nombre: " . $name;
+    $msjCorreo .= "\r\n";
+    $msjCorreo .= "Teléfono Fijo: " . $phone " , Teléfono Celular: " . $phone2;
+    $msjCorreo .= "\r\n";
+    $msjCorreo .= "Mensaje: " . $comment;
+    $msjCorreo .= "\r\n";
+
+    if (mail($para, "prueba", $msjCorreo, $headers)) {
+         echo "<script language='javascript'>
+            alert('Mensaje enviado, muchas gracias.');
+         </script>";
     } else {
       //Creamos cabecera.
       $headers = 'From' . " " . $email . "\r\n";
