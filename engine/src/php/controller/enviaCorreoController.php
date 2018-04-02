@@ -26,14 +26,13 @@
     $msjCorreo .= "\r\n";
 
     if (mail($para, "prueba", $msjCorreo, $headers)) {
-         echo "<script language='javascript'>
-            alert('Mensaje enviado, muchas gracias.');
-         </script>";
+       echo "<script language='javascript'>
+          alert('Mensaje enviado, muchas gracias.');
+       </script>";
     } else {
-        echo "<script language='javascript'>
+      echo "<script language='javascript'>
         alert('fallado');
-        </script>";
-      }
+      </script>";
     }
   }
 ?>
