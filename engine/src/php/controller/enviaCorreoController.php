@@ -1,58 +1,49 @@
 <?php
-  // abrimos la sesión cURL
-  $ch = curl_init();
-
-  // definimos la URL a la que hacemos la petición
-  curl_setopt($ch, CURLOPT_URL,"http://localhost/corlets/index.html");
-  // indicamos el tipo de petición: POST
-  curl_setopt($ch, CURLOPT_POST, TRUE);
-  // definimos cada uno de los parámetros
-  $name  = $mail = $phone = $phone2 = $comment = $para = $headers = $msjCorreo = NULL;
-  curl_setopt($ch, CURLOPT_POSTFIELDS, "$name=$_POST['name']&$mail=$_POST['mail']&$phone=$_POST['phone']                                   &$phone2=$_POST['phone2']&$comment=$_POST['comment']                                   &$para='pedro.lopez.darknes@gmail.com'&$headers=NULL&$msjCorreo=NULL");
-
-  // recibimos la respuesta y la guardamos en una variable
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  $remote_server_output = curl_exec ($ch);
+  require("class.phpmailer.php");
+  $mail = new PHPMailer;
 
   //Reseteamos variables a 0.
-  if (isset($_POST['send'])) {
-    //Obtenemos valores input formulario
-    
-    $name = $_POST['name'];
-    $mail = $_POST['mail'];
-    $phone = $_POST['phone'];
-    $phone2 = $_POST['phone2'];
-    $comment = $_POST['comment'];
-    $para = 'pedro.lopez.darknes@gmail.com';
+  $name  = $mailer = $phone = $phone2 = $comment = $para = NULL;
 
-    //Creamos cabecera.
-    $headers = 'From' . " " . $mail . "\r\n";
-    $headers .= "Content-type: text/html; charset=utf-8";
-    $headers = wordwrap($headers, 70, "\r\n");
-
-    //Componemos cuerpo correo.
-    $msjCorreo = "Nombre: " . $name;
-    $msjCorreo .= "\r\n";
-    $msjCorreo .= "Teléfono Fijo: " . $phone;
-    $msjCorreo .= "\r\n";
-    $msjCorreo .= "Teléfono Celular: " . $phone2;
-    $msjCorreo .= "\r\n";
-    $msjCorreo .= "Mensaje: " . $comment;
-    $msjCorreo .= "\r\n";
-    $msjCorreo = wordwrap($msjCorreo, 70, "\r\n");
+  $name = $_POST['name'];
+  $mailer = $_POST['mailer'];
+  $phone = $_POST['phone'];
+  $phone2 = $_POST['phone2'];
+  $comment = $_POST['comment'];
     
-    if (mail($para, "prueba", $msjCorreo, $headers)) {
-        echo "4";
-        echo "<script language='javascript'>
+  $mail->isSMTP();
+  $mail->Host = 'stmp.gmail.com';
+  $mail->STMPAuth = true;
+  $mail->Username = 'pedro.lopez.darknes@gmail.com';
+  $mail->Password = '/*2413Warrior*/';
+  $mail->STMPSecure = 'tls';
+  $mail->Port = 21;
+
+  $mail->From = 'pedro.lopez.darknes@gmail.com';
+  $mail->FromName = 'Pedro Lopez';
+  $mail->addAddress('pedro.lopez.darknes@gmail.com', 'Pedro Lopez');
+
+  $mail->AddAddress("$mailer"); // Esta es la dirección a donde enviamos
+  $mail->IsHTML(true); // El correo se envía como HTML
+  $mail->Subject = “Información”; // Este es el titulo del email.
+  $body = “Hola mis datos son los siguientes:<br />”;
+  $body .= “Nombre: <strong> $name</strong><br>”;
+  $body .= “Teléfono Fijo: <strong> $phone</strong><br>”;
+  $body .= “Teléfono Celular: <strong> $phone2</strong><br>”;
+  $body .= “Mensaje: <strong> $comment</strong><br>”;
+  
+  $mail->Body = $body; // Mensaje a enviar
+  $success = $mail->Send();
+    
+    if ($success) {
+       echo "<script language='javascript'>
           alert('Mensaje enviado, muchas gracias.');
        </script>";
     } else {
       echo "<script language='javascript'>
-        alert('fallado');
+        alert('Algo a fallado');
       </script>";
     }
-  // cerramos la sesión cURL
-  curl_close ($ch);
   }
 ?>
 
