@@ -23,13 +23,13 @@
   $mail->SMTPSecure = 'ssl';
   $mail->Host = 'smtp.gmail.com';
   $mail->Port = 465;
-  $mail->Username = 'pedro.lopez.darknes@gmail.com';
+  $mail->Username = 'sitewebcf@gmail.com';
   $mail->SMTPAuth = true;
-  $mail->Password = "/*2413Warrior*/";
+  $mail->Password = "240617WEBCF";
     
   $mail->From = $mailer;
   $mail->FromName = $name;
-  $mail->AddAddress('pedro.lopez.darknes@gmail.com','Pedro Lopez');
+  $mail->AddAddress('mastermonse30@gmail.com','Corlets_Page');
 
   $mail->IsHTML(true); // El correo se envía como HTML
   $mail->Subject = 'Información'; // Este es el titulo del email.
