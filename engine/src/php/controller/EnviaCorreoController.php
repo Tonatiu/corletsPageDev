@@ -52,4 +52,7 @@
       alert('Algo a fallado');
     </script>";
   }
+  echo "<script language='javascript'>
+        window.location = 'http://localhost/corlets/';
+     </script>";
 ?>
