@@ -200,13 +200,13 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm" id="data-form">
-							<form method="post" action="mailto:pedro.lopez.darknes@gmail.com">
+							<form method="post" action="engine/src/php/controller/enviaCorreoController.php">
 								<div class="form-group">
-									<input type="email" class="form-control" id="mailer" placeholder="e-mail">
-									<input type="text" class="form-control" id="name" placeholder="Nombre">
-									<input type="text" class="form-control" id="phone" placeholder="Teléfono 1">
-									<input type="text" class="form-control" id="phone2" placeholder="Teléfono 2">
-									<textarea class="form-control" id="comment" rows="3" placeholder="Comentario"></textarea>
+									<input type="email" class="form-control" name="mailer" placeholder="e-mail">
+									<input type="text" class="form-control" name="name" placeholder="Nombre">
+									<input type="text" class="form-control" name="phone" placeholder="Teléfono 1">
+									<input type="text" class="form-control" name="phone2" placeholder="Teléfono 2">
+									<textarea class="form-control" rows="3" name="comment" placeholder="Comentario"></textarea>
 									<button type="submit" id="send" class="btn btn-primary">Enviar</button>
 								</div>
 							</form>
