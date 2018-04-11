@@ -204,8 +204,8 @@
 								<div class="form-group">
 									<input type="email" class="form-control" name="mailer" placeholder="e-mail" required>
 									<input type="text" class="form-control" name="name" placeholder="Nombre" required>
-									<input type="text" class="form-control" name="phone" placeholder="Teléfono 1">
-									<input type="text" class="form-control" name="phone2" placeholder="Teléfono 2">
+									<input type="text" class="form-control" name="phone" placeholder="Teléfono 1" pattern="[0-9]{8,10}" title="Escribe un numero válido de 8 a 10 dígitos">
+									<input type="text" class="form-control" name="phone2" placeholder="Teléfono 2" pattern="[0-9]{8,10}" title="Escribe un numero válido de 8 a 10 dígitos">
 									<textarea class="form-control" rows="3" name="comment" placeholder="Comentario" required></textarea>
 									<button type="submit" id="send" class="btn btn-primary">Enviar</button>
 								</div>
